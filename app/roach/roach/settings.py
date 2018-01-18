@@ -14,6 +14,14 @@ BOT_NAME = 'roach'
 SPIDER_MODULES = ['roach.spiders']
 NEWSPIDER_MODULE = 'roach.spiders'
 
+DATABASE = {
+    'drivername': 'postgres',
+    'host': 'localhost',
+    'port': '5432',
+    'username': 'app',
+    'password': 'billyjoel',
+    'database': 'scrape'
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'roach (+http://www.yourdomain.com)'
@@ -67,6 +75,8 @@ ROBOTSTXT_OBEY = True
 #ITEM_PIPELINES = {
 #    'roach.pipelines.RoachPipeline': 300,
 #}
+
+ITEM_PIPELINES = ['roach.pipelines.RoachPipeline']
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
